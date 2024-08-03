@@ -1,0 +1,9 @@
+create table student(id int auto_increment unique,name varchar(50) not null ,email varchar(50) not null, age int check(age>18) ,city varchar(30) check( city in("vizag","vzm","rjy")));
+desc student;
+use demo;
+select name from student;
+insert into student(name,email,age,city) values("sarvani","sarvani@gmail.com",19,"vzm"),("shivani","shivani@gmail.com",20,"rjy");
+update student set email="mani@123" where id=1;
+delete from student where id=1;
+drop table student,salary;
+select * from employee;

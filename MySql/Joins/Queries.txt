@@ -1,0 +1,15 @@
+use joins;
+
+create table employees(emp_id int primary key,emp_name varchar(30) not null,emp_email varchar(40) not null unique);
+create table salary(emp_id int,dapt varchar(20) not null,salary int not null);
+desc employees;
+insert into employees values(123,"demo1","shivani@123");
+insert into employees values(124,"demo2","shiv@123");
+insert into employees values(12,"demo3","swdfeghji@123");
+insert into employees values(126,"demo4","kjsdflv@123"),(127,"demo6","wjekfl@123"),(128,"demo7","wedkkfop[@123"),(129,"demo8","vpwdofkj@123");
+insert into salary values(127,"ece",10000),(125,"cse",100000),(126,"eee",1000000);
+select* from joins.employees;
+select * from joins.salary;
+select employees.emp_id,employees.emp_name,employees.emp_email,salary.dapt,salary.salary from employees inner join salary on employees.emp_id=salary.emp_id;
+select employees.emp_id,employees.emp_name,employees.emp_email,salary.dapt,salary.salary from employees left outer join salary on employees.emp_id=salary.emp_id;
+select employees.emp_id,employees.emp_name,employees.emp_email,salary.dapt,salary.salary from employees right outer join salary on employees.emp_id=salary.emp_id;
